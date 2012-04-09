@@ -36,7 +36,7 @@ def probe_for_duration(hour=0, minute=0, second=0):
     
     # Measurements
     while nb_probes < NB_PROBES:
-        current_time = time.asctime().split(' ')[3] # Get measurement time. We split because we're only interested in the HH:MM:SS signal
+        current_time = time.asctime().split(' ')[4] # Get measurement time. We split because we're only interested in the HH:MM:SS signal
         cpu_temp, gpu_temp =  probe_temperature()
         cpu_temps[current_time] = cpu_temp
         gpu_temps[current_time] = gpu_temp
@@ -73,5 +73,7 @@ def plot_temperatures(cpu_temps, gpu_temps):
 
 if __name__ == '__main__': 
     
-    cpu, gpu = probe_for_duration(hour=0, minute=10, second=0)
+    cpu, gpu = probe_for_duration(hour=0, minute=15, second=0)
+    print cpu
+    print gpu
     plot_temperatures(cpu, gpu)

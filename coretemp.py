@@ -74,6 +74,4 @@ def plot_temperatures(cpu_temps, gpu_temps):
 if __name__ == '__main__': 
     
     cpu, gpu = probe_for_duration(hour=0, minute=15, second=0)
-    print cpu
-    print gpu
     plot_temperatures(cpu, gpu)
